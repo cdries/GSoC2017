@@ -21,7 +21,7 @@
       <div class="inner">
         <h1>PerformanceAnalytics</h1>
         <h2>improved functionality for higher order comoment estimation</h2>
-        <a href="https://github.com/braverock/PerformanceAnalytics" class="button"><small>View project on</small> GitHub</a>
+        <a href="https://github.com/braverock/PerformanceAnalytics" class="button"><small>View package on</small> GitHub</a>
       </div>
     </header>
 
@@ -30,16 +30,22 @@
         <section id="main-content">
 
         <h1>GSoC 2017 project by cdries</h1>
-        <p>Lorem ipsizzle funky fresh i'm in the shizzle boom shackalack, consectetizzle adipiscing my shizz. Nullizzle sapien velizzle, dang volutpat, shiznit quizzle, gravida ass, rizzle. Pot get down get down tortor. Sed erizzle. Black go to hizzle dolizzle dapibizzle turpis fo shizzle my nizzle yo. Maurizzle pellentesque nibh et check it out. Bow wow wow check it out tortizzle. Pellentesque for sure rhoncizzle bow wow wow. In owned habitasse brizzle dictumst. Nizzle dapibizzle. Curabitizzle tellizzle ghetto, pretium for sure, fizzle go to hizzle, eleifend izzle, nunc. Dope suscipizzle. Integizzle boom shackalack velit ass purus.</p>
+        <p>This project improves the functionality for estimation of higher-order comoments in the R packages PerformanceAnalytics and PortfolioAnalytics. First, the implementation of the estimators is optimized, resulting in a significant speed gain. This makes the methods usable in higher dimensions. Second, a full range of state-of-the-art higher order comoment estimators is added, previously unavailable for the community. This project page gives a summary of the work done during Google Summer of Code 2017.</p>
+        
+        <p>First, installing the most current branch of PerformanceAnalytics available on GitHub can be done as follows</p>
 
         <div class="highlight">
-        <pre><span class="nb">require</span> <span class="s1">'redcarpet'</span>
-<span class="n">markdown</span> <span class="o">=</span> <span class="no">Redcarpet</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">"Hello World!"</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="n">markdown</span><span class="o">.</span><span class="n">to_html</span></pre>
+        <pre><span class="nb">require</span>(<span class="s1">"devtools"</span>)
+<span class="nb">install_github</span>(<span class="s1">"braverock/PerformanceAnalytics"</span>)</pre>
         </div>
 
         <h2>Headline 2</h2>
-        <p>Lorem ipsizzle funky fresh i'm in the shizzle boom shackalack, consectetizzle adipiscing my shizz. Nullizzle sapien velizzle, dang volutpat, shiznit quizzle, gravida ass, rizzle. Pot get down get down tortor. Sed erizzle. Black go to hizzle dolizzle dapibizzle turpis fo shizzle my nizzle yo. Maurizzle pellentesque nibh et check it out. Bow wow wow check it out tortizzle. Pellentesque for sure rhoncizzle bow wow wow. In owned habitasse brizzle dictumst. Nizzle dapibizzle. Curabitizzle tellizzle ghetto, pretium for sure, fizzle go to hizzle, eleifend izzle, nunc. Dope suscipizzle. Integizzle boom shackalack velit ass purus.</p>
+        <p>The first major part of the project is can be found in <a href="https://github.com/braverock/PerformanceAnalytics/pull/74">this</a> pull request. Here the functions M3.MM and M4.MM are written in C, exploiting the symmetric structure, leading to a dramatic speed improvement for moderate and larger dimensions.</p>
+        
+        <p>Pull request 74 also improves the internal handling of the coskewness and cokurtosis matrices for the risk functions ES and VaR, making use of the optimized implementation of M3.MM and M4.MM. All helper functions in the PerformanceAnalytics package are now capable of accepting the reduced form coskewness and cokurtosis matrices containing only the unique elements and thus resulting in a memory gain.</p>
+        
+        <p>In addition, structured, shrinkage and EWMA estimators are added. The documentation is written to accommodate these changed and a vignette is added explaining all the new comoment estimators. The vignette can also be downloaded <a href="https://github.com/braverock/PerformanceAnalytics/pull/74">here</a>.</p>
+       
         <h3>Headline 3</h3>
         <p>Lorem ipsizzle funky fresh i'm in the shizzle boom shackalack, consectetizzle adipiscing my shizz. Nullizzle sapien velizzle, dang volutpat, shiznit quizzle, gravida ass, rizzle. Pot get down get down tortor. Sed erizzle. Black go to hizzle dolizzle dapibizzle turpis fo shizzle my nizzle yo. Maurizzle pellentesque nibh et check it out. Bow wow wow check it out tortizzle. Pellentesque for sure rhoncizzle bow wow wow. In owned habitasse brizzle dictumst. Nizzle dapibizzle. Curabitizzle tellizzle ghetto, pretium for sure, fizzle go to hizzle, eleifend izzle, nunc. Dope suscipizzle. Integizzle boom shackalack velit ass purus.</p>
         <h4>Headline 4</h4>
