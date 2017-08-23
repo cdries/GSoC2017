@@ -6,4 +6,4 @@ for performance and risk analysis of financial instruments or portfolios.
 The package aims to aid practitioners and researchers in using the latest research for
 analysis of both normally and non-normally distributed return streams.
 
-In this project we improved the functionality of the existing coskewness and cokurtosis estimation methods. Additionally, we added state-of-the-art alternative estimatino techniques. For more detail, see TODO.
+In this project we improved the functionality of the existing coskewness and cokurtosis estimation methods. Additionally, we added state-of-the-art alternative estimatino techniques. For more detail, see https://cdries.github.io/GSoC2017/.
