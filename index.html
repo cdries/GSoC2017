@@ -47,22 +47,32 @@
         <p>Pull request 74 also improves the internal handling of the coskewness and cokurtosis matrices for the risk functions ES and VaR, making use of the optimized implementation of M3.MM and M4.MM. All helper functions in the PerformanceAnalytics package are now capable of accepting the reduced form coskewness and cokurtosis matrices containing only the unique elements and thus resulting in a memory gain.</p>
         
         <p>In addition, structured (M2.struct, M3.struct, M4.struct), shrinkage (M2.shrink, M3.shrink, M4.shrink) and EWMA (M2.ewma, M3.ewma, M4.ewma) estimators are added. The structured estimators are based upon Simaan (1993), Martellini and Ziemann (2010) and Boudt, Lu and Peeters (2015). The shrinkage estimators implement Boudt, Cornilly and Verdonck (2017a) and the corrections to Martellini and Ziemann (2010) made in Boudt, Cornilly and Verdonck (2017a). The documentation of the added functions is written to accommodate these changes and a vignette is added explaining all the new comoment estimators. The vignette can also be downloaded <a href="https://github.com/cdries/GSoC2017/tree/master/files">here</a>.</p>
+        
+        <p>This part of the project is merged into the main branch of PerformanceAnalytics</p>
        
         <h2>Part 2</h2>
         <p>Next, Moment Component Analysis (MCA) for the coskewness and cokurtosis matrices, based on of Lim and Morton (2007) and Jondeau and Rockinger (2017) are implemented. MCA is a generalization of Principal Component Analysis to higher order moments. PCA tries to find component that explain variance in the data while MCA searches for components that explain skewness or heavy tails. The <a href="https://github.com/cdries/GSoC2017/tree/master/files">vignette</a> is updated to include this technique and a <a href="https://github.com/braverock/PerformanceAnalytics/pull/77">pull request</a> includes this estimator in the PerformanceAnalytics package.</p>
         
         <h2>Part 3</h2> 
+        <p>Finally, the third stage of this project implements the Nearest Comoment Estimator. An estimator based on Boudt, Cornilly and Verdonck (2017b). This is still work in progress, and can be found in the NCE branch of PerformanceAnalytics.</p>
         
-        In progress...
+        <p>To load this part of the project, execute the following code:</p>
+        <div class="highlight">
+        <pre><span class="nb">require</span>(<span class="s1">"githubinstall"</span>)
+<span class="nb">gh_install_packages</span>(<span class="s1">"braverock/PerformanceAnalytics"</span>, ref = <span class="s1">"NCE"</span>)</pre>
+        </div>
         
         
         <h2>Further work</h2> 
+        <p>The NCE estimator is still in research stage. Hence, its default settings might change. The NCE branch will be updated to contain the latest version of the estimator. When the estimator is finalized, the documentation will be extended and the estimator will also be added to the vignette, explaining the method in more depth.</p>
         
-        To add...
+        <p>The aim of this project was to improve the functionality of higher order comoment estimation within the PerformanceAnalytics package. This included numeical improvements, but also the implementation of new estimation methods. I will continue to update the package when new estimation proposals are made in the literature. This way, the package stays up to date.</p>
         
         
         <h2>References</h2> 
         <p>Boudt, Kris, Cornilly, Dries and Verdonck, Tim. 2017a. A Coskewness shrinkage approach for estimating the skewness of linear combinations of random variables. Submitted. Available at SSRN: https://ssrn.com/abstract=2839781</p>
+        
+        <p>Boudt, Kris, Cornilly, Dries and Verdonck, Tim. 2017b. Nearest Comoment Estimation. Available upon request from the authors.</p>
         
         <p>Boudt, Kris, Lu, Wanbo and Peeters, Benedict. 2015. Higher order comoments of multifactor models and asset allocation. Finance Research Letters, 13, 225-233.</p>
         
