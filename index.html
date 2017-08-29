@@ -53,13 +53,19 @@
         <h2>Part 2</h2>
         <p>Next, Moment Component Analysis (MCA) for the coskewness and cokurtosis matrices, based on of Lim and Morton (2007) and Jondeau and Rockinger (2017) are implemented. MCA is a generalization of Principal Component Analysis to higher order moments. PCA tries to find component that explain variance in the data while MCA searches for components that explain skewness or heavy tails. The <a href="https://github.com/cdries/GSoC2017/tree/master/files">vignette</a> is updated to include this technique and a <a href="https://github.com/braverock/PerformanceAnalytics/pull/77">pull request</a> includes this estimator in the PerformanceAnalytics package.</p>
         
+        <p>For now, this part still has to be merged with the master branch, to load the code in order to use the M3.MCA and M4.MCA estimators, do:</p>
+        <div class="highlight">
+        <pre><span class="nb">require</span>(<span class="s1">"githubinstall"</span>)
+<span class="nb">gh_install_packages</span>(<span class="s1">"braverock/PerformanceAnalytics"</span>, ref = <span class="s1">"MCA_rebase"</span>)</pre>
+        </div>
+        
         <h2>Part 3</h2> 
         <p>Finally, the third stage of this project implements the Nearest Comoment Estimator. An estimator based on Boudt, Cornilly and Verdonck (2017b). This is still work in progress, and can be found in the NCE branch of PerformanceAnalytics.</p>
         
         <p>To load this part of the project, execute the following code:</p>
         <div class="highlight">
         <pre><span class="nb">require</span>(<span class="s1">"githubinstall"</span>)
-<span class="nb">gh_install_packages</span>(<span class="s1">"braverock/PerformanceAnalytics"</span>, ref = <span class="s1">"NCE"</span>)</pre>
+<span class="nb">gh_install_packages</span>(<span class="s1">"braverock/PerformanceAnalytics"</span>, ref = <span class="s1">"NCE_rebase"</span>)</pre>
         </div>
         
         
